@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY CV</title>
+    <link  rel="stylesheet" type="text/css" href="css/index.css"/>
+</head>
+<body>
+
+    <div class="resume" id="app">
+        <div class="resume-left">
+            <div class="resume-profile">
+                <img src="images/beni.jpg" alt="profile">
+            </div>
+            <div class="resume-content">
+                <div class="resume-item resume-info">
+                    <div class="title">
+                        <p class="bold">Jiel Niño Gaid</p>
+                        <p class="regular">Employee</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="icon">
+                            <i class="fas fa-map-signs"></i>
+                            </div>
+                            <div class="data">
+                                CDO <br /> PH
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="data">
+                                +6399999999
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="data">
+                                mygmail@gmail.com
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="resume-item resume-skills">
+                    <div class="title">
+                        <p class="bold">skills</p>
+                    </div>
+                    <ul>
+                        <template v-for="skill in skills">
+                            <li>
+                                <div class="skill_name">
+                                    {{skill.name}}
+                                </div>
+                                <div class="skill_progress">
+                                <span style="width: 80%;"></span>
+                                </div>
+                                <div class="skill_per">
+                                    {{skill.percent}}
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                <div class="resume-item resume-achievements">
+                    <div class="title">
+                        <p class="bold">achievements</p>
+                    </div>
+                    <ul>
+                        <template v-for="achievement in achievements">
+                            <li>
+                                <div class="skill_name">
+                                    {{achievement}}
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                <div class="resume-item resume-social">
+                    <div class="title">
+                    <p class="bold">Socials</p>
+                    </div>
+                    <ul>
+                        <template v-for="social in socials">
+                            <li>
+                                <div class="icon">
+                                    <i :class="`fab ${social.classIcon}`"></i>
+                                </div>
+                                <div class="data">
+                                    <a :href="social.link" target="_blank" >
+                                        <p class="semi-bold">{{social.name}}</p>
+                                        <p>{{social.account}}</p>
+                                    </a>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="resume-right">
+            <div class="resume-item resume-about">
+                <div class="title">
+                    <p class="bold">About me</p>
+                </div>
+                <p>
+                    I am the bone of my sword. Steel is my body and fire is my blood. I have created over a thousand blades.
+                    Unkown to death. Nor known to life. Have Withstood pain to create many weapons. Yet those hands shall
+                    never hold anything. So, as I pray, Unlimited Blade Works.
+                </p>
+            </div>
+            <div class="resume-item resume-work">
+                <div class="title">
+                    <p class="bold">Work Experience</p>
+                </div>
+                <ul>
+                    <template v-for="work in workExperiences">
+                        <li>
+                            <div class="date">{{work.year}}</div> 
+                                <div class="info">
+                                    <p class="semi-bold">{{work.positionTitle}}</p> 
+                                    <p>{{work.positionDetails}}</p>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+            <div class="resume-item resume-education">
+                <div class="title">
+                    <p class="bold">Education</p>
+                </div>
+                <ul>
+                    <template v-for="education in educations">
+                        <li>
+                            <div class="date">{{education.year}}</div> 
+                                <div class="info">
+                                    <p class="semi-bold">{{education.degree}}</p> 
+                                    <p>{{education.details}}</p>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+            <div class="resume-item resume-trainings">
+                <div class="title">
+                    <p class="bold">Trainings/Workshop</p>
+                </div>
+                <ul>
+                    <template v-for="training in trainings">
+                        <li>
+                            <div class="date">{{training.year}}</div> 
+                                <div class="info">
+                                    <p class="semi-bold">{{training.name}}</p> 
+                                    <p>{{training.details}}</p>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script src="js/vue/index.js"></script>
+</html>
